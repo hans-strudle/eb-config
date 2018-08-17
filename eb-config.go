@@ -46,7 +46,9 @@ func displayConfig(settings []*elasticbeanstalk.ConfigurationSettingsDescription
 						continue
 					}
 					line = line + *option.Value
-				} else if len(vals) < 0 {
+				} else if len(vals) > 0 {
+					continue
+				} else {
 					line = line + " Nothing"
 				}
 				logger.Println(line)
